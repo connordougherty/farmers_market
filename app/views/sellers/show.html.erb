@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @seller.name %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @seller.bio %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @seller.user_id %>
+</p>
+
+<p>
+	<strong>Products:</strong><br>
+	<%= render @seller.products %>
+</p>
+<p>
+<%= link_to 'New Product', new_product_path %>
+</p>
+
+<%= link_to 'Edit', edit_seller_path(@seller) %> |
+<%= link_to 'Back', sellers_path %>

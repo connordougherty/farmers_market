@@ -1,0 +1,16 @@
+<h3>Sign up as a:</h3>
+<%= form_tag(user_select_path, method: 'get') do %>
+  <div class="field">
+    <%= radio_button_tag(:user_type, "Buyer") %>
+    <%= label_tag 'Buyer' %>
+  </div>
+
+  <div class="field">
+    <%= radio_button_tag(:user_type, "Seller") %>
+    <%= label_tag 'Seller' %>
+  </div>
+
+  <div class="actions">
+    <%= submit_tag 'Submit' %>
+  </div>
+<% end %>
