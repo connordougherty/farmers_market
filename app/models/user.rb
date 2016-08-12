@@ -4,8 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :seller
-  has_one :buyer
   has_one :storefront
   has_one :profile
   has_many :line_items

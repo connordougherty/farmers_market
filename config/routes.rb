@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   resources :profiles
   resources :storefronts
   resources :products
-  resources :buyers
-  resources :sellers
   devise_for :users, controllers: { registrations: "registrations" }
 
   root 'welcome#index'
