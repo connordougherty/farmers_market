@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   has_one :profile
   has_many :line_items
 
+  def admin?
+    role == 'admin'
+  end
+
   def seller?
   	role == 'seller'
   end
