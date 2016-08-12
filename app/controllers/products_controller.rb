@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  authorize_resource
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
@@ -69,6 +70,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :quantity, :cost, :info, :seller_id)
+      params.require(:product).permit(:name, :quantity, :cost, :info, :storefront_id)
     end
 end

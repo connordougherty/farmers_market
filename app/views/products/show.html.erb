@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <strong>Quantity:</strong>
+  <strong>In Stock:</strong>
   <%= @product.quantity %>
 </p>
 
@@ -21,7 +21,16 @@
 </p>
 
 <p>
-	<%= @product.seller_id %>
+	<%= @product.storefront_id %>
+</p>
+
+<p>
+	<%= form_tag('/add_to_cart') do %>
+    <%= hidden_field_tag :user_id, current_or_guest_user.id %>
+    <%= hidden_field_tag :product_id, @product.id %>
+    <%= number_field_tag :quantity, nil, placeholder: "How many?" %><br><br>
+    <%= submit_tag "Buy", class: "btn btn-success" %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

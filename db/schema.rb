@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809152806) do
+ActiveRecord::Schema.define(version: 20160811201334) do
 
   create_table "buyers", force: :cascade do |t|
     t.string   "name"
@@ -21,11 +21,12 @@ ActiveRecord::Schema.define(version: 20160809152806) do
   end
 
   create_table "line_items", force: :cascade do |t|
-    t.integer  "buyer_id"
     t.integer  "product_id"
     t.integer  "line_item_total"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "quantity"
+    t.integer  "user_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -33,14 +34,29 @@ ActiveRecord::Schema.define(version: 20160809152806) do
     t.integer  "quantity"
     t.integer  "cost"
     t.text     "info"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "storefront_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "seller_id"
   end
 
   create_table "sellers", force: :cascade do |t|
     t.string   "name"
     t.text     "bio"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "storefronts", force: :cascade do |t|
+    t.string   "name"
+    t.text     "info"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -59,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160809152806) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "role"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

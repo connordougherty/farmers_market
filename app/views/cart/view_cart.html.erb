@@ -1,0 +1,13 @@
+<div>
+	<% current_or_guest_user.line_items.each do |line_item| %>
+	<strong><%= line_item.product.storefront.name %></strong>
+		<ul>
+			<li><%= line_item.product.name %></li>
+			<li><%= line_item.quantity %></li>
+			<li><%= line_item.line_item_total %></li>
+		</ul>
+	<% end %>
+</div>
+
+<p>Grand Total:</p>
+<p><%= @grand_total %></p>

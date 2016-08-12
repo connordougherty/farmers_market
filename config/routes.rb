@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
+  resources :profiles
+  resources :storefronts
   resources :products
   resources :buyers
   resources :sellers
   devise_for :users, controllers: { registrations: "registrations" }
 
   root 'welcome#index'
-
-  get 'signup_redirect' => 'welcome#signup_redirect'
-  get 'user_select' => 'welcome#user_select'
+  post 'add_to_cart' => 'cart#add_to_cart'
+  get 'view_cart' => 'cart#view_cart'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

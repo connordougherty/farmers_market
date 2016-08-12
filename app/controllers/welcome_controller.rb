@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
 	def index
 		@sellers = Seller.all
+		@storefronts = Storefront.all
 	end
 
 	def user_select

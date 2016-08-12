@@ -6,4 +6,15 @@ class User < ActiveRecord::Base
 
   has_one :seller
   has_one :buyer
+  has_one :storefront
+  has_one :profile
+  has_many :line_items
+
+  def seller?
+  	role == 'seller'
+  end
+
+  def buyer?
+    role == 'buyer'
+  end
 end
