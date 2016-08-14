@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'better_errors'
-gem 'bootstrap-sass'
 gem 'cancancan'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
