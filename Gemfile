@@ -6,6 +6,7 @@ gem 'cancancan'
 gem "bulma-rails", "~> 0.0.28"
 gem 'font-awesome-sass', '~> 4.6.2'
 gem "figaro"
+gem 'rails-rename', '~> 1.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
