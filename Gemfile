@@ -4,6 +4,8 @@ gem 'devise'
 gem 'better_errors'
 gem 'cancancan'
 gem "bulma-rails", "~> 0.0.28"
+gem 'font-awesome-sass', '~> 4.6.2'
+gem "figaro"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'

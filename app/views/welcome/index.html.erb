@@ -1,3 +1,17 @@
-<h1>hi</h1>
+<div id="map"></div>
+<div class="container" id="search">
+	<div class="columns">
+		<div class="column is-8 is-offset-2">
+			<p class="control has-addons">
+			  <input class="input is-medium is-expanded" type="text" placeholder="Search for produce: e.g., Banana">
+			  <input class="input is-medium is-expanded" type="text" placeholder="Search by location: e.g., 90210">
+			  <a class="button is-medium is-info">
+			    Search
+			  </a>
+			</p>
+		</div>
+	</div>
+</div>
 
-<%= render @storefronts %>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['google_maps_api_key'] %>&callback=initMap" async defer></script>
