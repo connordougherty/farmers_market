@@ -1,10 +1,11 @@
 <nav class="nav">
   <div class="container">
     <div class="nav-left">
-      <%= link_to(root_path,  class: 'nav-item') do %>
+      <%= link_to(root_path,  class: 'nav-item is-branding') do %>
         <span class="icon">
           <i class="fa fa-home"></i>
         </span>
+        <h1>farmshare</h1>
       <% end %>
       
     </div>
@@ -28,7 +29,7 @@
                 General
               </p>
               <ul class="menu-list">
-                <li><a href="#">Dashboard</a></li>
+                <li><%= link_to 'Profile', profile_path(current_user.profile.id) %></li>
                 <li><a href="#">Customers</a></li>
                 <li>
                   <a href="<%= destroy_user_session_path %>" class="button is-primary is-outlined" id="log-out-btn" data-method="delete">

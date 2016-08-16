@@ -35,6 +35,10 @@ $primary: $green;
   color: #fff;
 }
 
+.nav-item a:hover, a.nav-item:hover {
+  color: #f2f2f2;
+}
+
 .nav-item a.is-tab.is-active, a.nav-item.is-tab.is-active {
   border-bottom: 3px solid #fff;
   border-top: 3px solid transparent;
@@ -69,4 +73,17 @@ $primary: $green;
 
 #log-out-btn {
 	display: inline-flex;
+}
+
+#banner-slide {
+  display: none;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px; 
+  background-color: #fff;
+  position: relative;
+  top: -125px;
 }
