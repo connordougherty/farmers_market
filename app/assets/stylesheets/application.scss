@@ -79,11 +79,17 @@ $primary: $green;
   display: none;
 }
 
-.circle {
+#circle {
+  display: none;
   border-radius: 50%;
-  width: 250px;
-  height: 250px; 
+  width: 280px;
+  height: 280px; 
   background-color: #fff;
   position: relative;
-  top: -125px;
+  top: -140px;
+}
+
+.hero.is-medium .hero-body {
+  padding-top: 220px;
+  padding-bottom: 20px;
 }

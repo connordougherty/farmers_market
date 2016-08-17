@@ -110,9 +110,9 @@ function initMap() {
     center: {lat: 35.585213, lng: -82.559235},
     zoom: 10,
     mapTypeControlOptions: {
-      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
-              'styled_map']
-    }
+      mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'styled_map']
+    },
+    disableDefaultUI: true
   });
 
   map.mapTypes.set('styled_map', styledMapType);

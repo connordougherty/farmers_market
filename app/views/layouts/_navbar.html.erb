@@ -22,7 +22,7 @@
     <div class="nav-right nav-menu">
       <% if user_signed_in? %>
         <div id="dropdown">
-          <a class="nav-item is-active is-tab" id="dropdown-btn" ><%= current_user.email %></a>
+          <a class="nav-item is-active is-tab" id="dropdown-btn" ><%= current_user.email %>&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
           <div id="dropdown-content">
             <aside class="menu">
               <p class="menu-label">

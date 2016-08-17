@@ -24,9 +24,8 @@ document.addEventListener("turbolinks:load", function() {
 document.addEventListener("turbolinks:load", function() {
   $("#banner-slide").slideDown(function() {
 	  if ($("#banner-slide").is(':visible')) {
-	    $("#banner-slide").css('display','flex');
-	    console.log('isvisible');
+	    $("#banner-slide").css('display', 'flex');
+	    $("#circle").fadeIn();
 	  }
 	});
 });
-
