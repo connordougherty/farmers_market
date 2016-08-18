@@ -1,7 +1,20 @@
-<div class="row">
-	<div class="col-md-12">
-		<div class="well">
-			<p><%= link_to storefront.name, storefront %></p>
-		 </div>
-  </div>
+<div class="column is-12">
+	<div class="box">
+	  <article class="media">
+	    <div class="media-left">
+	      <figure class="image is-64x64">
+	        <img src="http://placehold.it/128x128" alt="Image">
+	      </figure>
+	    </div>
+	    <div class="media-content">
+	      <div class="content">
+	        <p>
+	          <strong><%= link_to storefront.name, storefront %></strong>
+	          <br>
+	          <%= storefront.info %>
+	        </p>
+	      </div>
+	    </div>
+	  </article>
+	</div>
 </div>

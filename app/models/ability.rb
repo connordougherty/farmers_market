@@ -29,18 +29,24 @@ class Ability
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
     user ||= User.new
+    
     if user.admin?
         can :manage, :all
-    elsif user.seller?
+    end
+
+    if user.seller?
         can :manage, Storefront
         can :manage, Product
-    else
-        can :show, Storefront
-        can :show, Product
+        can :view, Profile
     end
 
     if user.buyer?
         can :manage, Profile
+        can :read, Storefront
+    end
+
+    if user.guest?
+        can :view, Storefront
     end
   end
 end

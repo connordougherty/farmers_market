@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
   def buyer?
     role == 'buyer'
   end
+
+  def guest?
+    role == 'guest'
+  end
 end

@@ -21,11 +21,14 @@
 
 $green: #83cead;
 $blue: #7fc8ed;
+$yellow: #fee379;
 $primary: $green;
 
 @import "bulma";
 
-
+.section {
+  background-color: rgba(0,0,0,0);
+}
 
 .nav {
 	background-color: $green;
@@ -92,4 +95,19 @@ $primary: $green;
 .hero.is-medium .hero-body {
   padding-top: 220px;
   padding-bottom: 20px;
+}
+
+#circle-container {
+  height: 0px;
+}
+
+.price.tag {
+  font-weight: bold;
+  font-size: $size-5;
+  color: #fff;
+}
+
+.add-to-cart {
+  width: 60px;
+  margin-top: 40px;
 }

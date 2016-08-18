@@ -1,20 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%= render 'header' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @storefront.name %>
-</p>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-offset-3">
+      	<h2 class="title is-2">
+      		Store
+      		
+      		<% if can? :create, Product, :user_id => current_user.id %>
+	        		<%= link_to 'New Product', new_product_path, class: 'button is-primary is-pulled-right' %>
+	        	<% end %>  
+      	</h2>
+      	<hr>
+      	<div class="columns">
+      		<%= render @storefront.products %>
+      	</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<p>
-  <strong>Info:</strong>
-  <%= @storefront.info %>
-</p>
-
-<p>
-  <strong>Products:</strong>
-  <%= render @storefront.products %>
-  <%= link_to 'New Product', new_product_path %>
-</p>
-
-<%= link_to 'Edit', edit_storefront_path(@storefront) %> |
-<%= link_to 'Back', storefronts_path %>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-offset-3">
+        <h2 class="title is-2">Info</h2>
+        <hr>
+        <p><%= @storefront.info %></p>
+      </div>
+    </div>
+  </div>
+</section>

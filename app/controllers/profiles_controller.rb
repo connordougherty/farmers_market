@@ -15,7 +15,10 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
+    @profile = Profile.new(user_id: current_user.id)
+    @profile.save
+
+    redirect_to edit_profile_path(@profile)
   end
 
   # GET /profiles/1/edit

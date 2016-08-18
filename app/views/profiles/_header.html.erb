@@ -1,0 +1,21 @@
+<section class="hero is-primary is-medium" id="banner-slide">
+  <div class="hero-body">
+	  <div class="container">
+		  <div class="columns">
+		  	<div class="column is-offset-3">
+			  	<h1 class="title is-1">
+			  			<%= @profile.name %>
+			  			<% if can? :manage, Profile, :user_id => current_user.id %>
+		        		<%= link_to 'Edit Profile', edit_profile_path(@profile), class: "button is-white is-outlined is-pulled-right" %>
+		        	<% end %>
+		      </h1>
+	      </div>
+      </div>
+	  </div>
+	</div>
+</section>
+
+<div class="container" id="circle-container">
+	<div id="circle">
+	</div>
+</div>

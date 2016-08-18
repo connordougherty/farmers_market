@@ -1,7 +1,34 @@
-<div class="row">
-	<div class="col-md-12">
-		<div class="well">
-			<p><%= link_to product.name, product %></p>
-		 </div>
-  </div>
+<div class="column is-4">
+	<div class="card is-fullwidth">
+	  <div class="card-image">
+	    <figure class="image is-4by3">
+	      <img src="http://placehold.it/300x225" alt="" >
+	    </figure>
+	  </div>
+	  <div class="card-content">
+	    <div class="media">
+	      <div class="media-content">
+	        <p class="title is-3"><%= link_to product.name, product %><span class="price tag is-warning is-medium is-pulled-right">$<%= product.cost %></span></p>
+	        <p class="subtitle is-6">In Stock: <%= product.quantity %></p>
+	      </div>
+	    </div>
+
+	    <div class="content">
+	      <%= product.info %>
+	      <br>
+	      <%= form_tag('/add_to_cart') do %>
+			    <div class="field">
+					  <%= hidden_field_tag :product_id, product.id %>
+					</div>
+					<div class="field">
+					  <%= hidden_field_tag :user_id, current_or_guest_user.id %>
+					</div>
+					<p class="control has-addons add-to-cart">
+						<%= number_field_tag :quantity, nil, class: 'input', placeholder: "Qty."  %>
+					  <%= submit_tag 'Add to cart', class: 'button is-primary' %>
+					</p>
+			  <% end %>
+	    </div>
+	  </div>
+	</div>
 </div>

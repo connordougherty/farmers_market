@@ -20,6 +20,7 @@
     </span>
 
     <div class="nav-right nav-menu">
+      <%= link_to 'Cart', view_cart_path, class: 'nav-item' %>
       <% if user_signed_in? %>
         <div id="dropdown">
           <a class="nav-item is-active is-tab" id="dropdown-btn" ><%= current_user.email %>&nbsp;<i class="fa fa-caret-down" aria-hidden="true"></i></a>
@@ -29,15 +30,15 @@
                 General
               </p>
               <ul class="menu-list">
-                <li><%= link_to 'Profile', profile_path(current_user.profile.id) %></li>
-                <li><a href="#">Customers</a></li>
                 <li>
-                  <a href="<%= destroy_user_session_path %>" class="button is-primary is-outlined" id="log-out-btn" data-method="delete">
-                    <span class="icon">
-                      <i class="fa fa-sign-out"></i>
-                    </span>
-                    <span>Log out</span>
-                  </a>
+                  <% if current_user.seller? %>
+                    <%= link_to 'Storefront', storefront_path(current_user.storefront) %>
+                  <% else %>
+                    <%= link_to 'Profile', profile_path(current_user.profile.id) %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'is-active is-inverted' %>
                 </li>
                 <br>
               </ul>

@@ -1,28 +1,38 @@
-<%= form_for(@storefront) do |f| %>
-  <% if @storefront.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@storefront.errors.count, "error") %> prohibited this storefront from being saved:</h2>
+<section>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-offset-3">
+        <h2 class="title is-2">Edit Storefront</h2>
+        <hr>
+        <%= form_for(@storefront) do |f| %>
+          <% if @storefront.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@storefront.errors.count, "error") %> prohibited this storefront from being saved:</h2>
 
-      <ul>
-      <% @storefront.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+              <ul>
+              <% @storefront.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <label class="label">Name</label>
+          <p class="control">
+            <%= f.text_field :name, class: 'input', placeholder: @storefront.name %>
+          </p>
+          <label class="label">Info</label>
+          <p class="control">
+            <%= f.text_area :info, class: 'textarea', placeholder: @storefront.info %>
+          </p>
+          <div class="field">
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          </div>
+          <div class="actions">
+            <%= f.submit 'Update Storefront', class: 'button is-primary' %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :info %><br>
-    <%= f.text_area :info %>
-  </div>
-  <div class="field">
-    <%= f.hidden_field :user_id, value: current_user.id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</section>

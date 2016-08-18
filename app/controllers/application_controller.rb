@@ -37,8 +37,6 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_or_guest_user
 
-  #this is a small change
-
   private
     def logging_in
       # For example:
